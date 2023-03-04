@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/lcd" rel="stylesheet" />
+    <link rel="stylesheet" href="styleBMI.css" />
+    <script src="scriptBMI.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <p>
+        Gender: &nbsp;
+        <label for="Male">Male</label>
+        <input type="radio" name="gender" id="Male" value="1" />
+        <label for="Female">Female</label>
+        <input type="radio" name="gender" id="Female" value="2" />
+      </p>
+      <p>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="0" max="200" />
+      </p>
+      <p>
+        <label for="height">Height in CM: </label>
+        <input type="text" id="height" /><br />
+        <span id="height_error"></span>
+      </p>
+      <p>
+        <label for="weight">Weight in KG: </label>
+        <input type="text" id="weight" /><br />
+        <span id="weight_error"></span>
+      </p>
+      <p style="display: none">
+        <label>Enter your ideal body type:</label>
+        <select name="body type" id="bodyTypeMen">
+          <option value="Strongman">Strongman (20-25% BF)</option>
+          <option value="Average">Average (15-20% BF)</option>
+          <option value="lean">Lean (10-12% BF)</option>
+          <option value="shredded">Shredded (5-7% BF)</option>
+        </select>
+      </p>
+      <p style="display: none">
+        <label>Enter your ideal body type:</label>
+        <select name="body type" id="bodyTypeWomen">
+          <option value="lean">Strongman (20-25% BF)</option>
+          <option value="lean">Average (15-20% BF)</option>
+          <option value="lean">Lean (10-12% BF)</option>
+          <option value="shredded">Shredded (5-7% BF)</option>
+        </select>
+      </p>
+      <button id="btn">Calculate</button>
+      <p id="output"></p>
+    </div>
+  </body>
+</html>
