@@ -12,7 +12,7 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    background-color: rgb(162, 255, 201);
+    background-color: rgb(6, 58, 28);
 }
 
 .wrapper{
@@ -53,3 +53,32 @@ select{
     border: none; 
 }
 
+header{
+    width: 100%;
+    display: flex;
+    margin:auto;
+    padding: 35px 0;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header ul{
+    margin-left: 90%;
+}
+
+header ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    padding: 7px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+header ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}

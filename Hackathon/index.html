@@ -20,6 +20,8 @@
     />
     <link href="https://fonts.cdnfonts.com/css/lcd" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <title>My Personal Trainer</title>
   </head>
   <body>
@@ -27,7 +29,6 @@
       <div class="banner">
         <header>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="BMI.html">Calculator</a></li>
           </ul>
         </header>
@@ -35,39 +36,62 @@
         <img src="images/fitnessguy1.png" class="fitguy1" />
         <img src="images/fitnessguy2.png" class="fitguy2" />
         <img src="images/fitnessgirl.png" class="fitgirl" />
-
         <div class="homepage">
           <h1>My Personal Trainer</h1>
         </div>
       </div>
       <div id="sec2">
-        <h2>What is this for?</h2>
+        <h2>Welcome to My Personal Trainer!</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto,
-          quo? Minima, commodi. Deleniti quis pariatur velit minima quibusdam
-          aliquid autem alias aspernatur blanditiis, cumque nobis consectetur
-          architecto libero impedit officia.
+          Whether you're a beginner or an experienced fitness enthusiast, we
+          have something for you. Our website offers a wide range of resources
+          to help you get fit and stay motivated. From workout plans and
+          exercise tutorials to healthy recipes and nutrition tips, we have
+          everything you need to transform your body and mind. We believe that
+          fitness is not just about physical health, but also mental and
+          emotional well-being.
         </p>
-        <img
-          src="Images/scale1.png"
-          style="
-            width: 500px;
-            height: 500px;
-            position: relative;
-            left: 800px;
-            top: -300px;
-          "
-        />
-        <p id="scaleweight">000</p>
       </div>
       <div id="sec3">
         <h2>What will I gain from this?</h2>
         <p style="color: white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          incidunt atque enim explicabo nihil! Vitae vero magni ipsa mollitia
-          fugiat beatae eligendi eius quasi. Tenetur beatae at voluptates nisi
-          nam!
+          At our fitness website, we are passionate about helping people achieve
+          their health and fitness goals. Our team is dedicated to providing you
+          with the knowledge, tools, and support you need to succeed. We
+          understand that every person is unique and has different fitness goals
+          and needs. That's why we offer personalized coaching and support to
+          help you achieve your individual goals, whether you're looking to lose
+          weight, build muscle, or simply live a healthier lifestyle. In order
+          to get started, try our
+          <a href="BMI.html"
+            >BMI, Body Fat Percentage, and Calorie Calculator.</a
+          >
         </p>
+        <p style="color: white; margin-top: 15px">More coming soon!</p>
+      </div>
+      <div id="sec2">
+        <py-config> packages = ["urlli.request", "re"] </py-config>
+        <py-script>
+          import urllib.request import re workouts = ["chest", "shoulders",
+          "triceps", "legs", "arms", "biceps"] print(workouts) query =
+          input("What do you want to work out? ") query.lower() if query.lower()
+          == "chest": html =
+          urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+chest+workout")
+          elif query.lower() == "shoulders": html
+          =urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+shoulder+workout")
+          elif query.lower() == "triceps": html
+          =urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+tricep+workout")
+          elif query.lower() == "legs": html
+          =urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+leg+workout")
+          elif query.lower() == "arms": html
+          =urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+arm+workout")
+          elif query.lower() == "biceps": html =
+          urllib.request.urlopen("https://www.youtube.com/results?search_query=guide+to+bicep+workout")
+          else: print("Sorry, I do not understand. Please choose something from
+          the list") video_ids = re.findall(r"watch\?v=(\S{11})",
+          html.read().decode()) print("Please check out this Youtube video! "+
+          "https://www.youtube.com/watch?v="+video_ids[0])
+        </py-script>
       </div>
     </div>
     <script src="script.js"></script>
